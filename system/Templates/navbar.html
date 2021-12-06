@@ -1,0 +1,53 @@
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+        <span class="navbar-brand" href="">CrowdFunding</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'create_project' %}">New Project <span class="sr-only">(current)</span></a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li class="nav-item active">
+                    <a class=" nav-item nav-link" href="{% url 'logout' %}">logout<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'login' %}">Login<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'signup' %}">Sign up<span
+                            class="sr-only">(current)</span></a>
+
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile' %}"><i class="fa fa-user fa-lg"></i> Profile</a>
+            </li>
+
+            </ul>
+            {% comment %}
+            <form class="form-inline my-2 my-lg-0" id="searchForm">
+                {% csrf_token %}
+                <input name='searchBox' class="form-control mr-sm-2" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="submit">Search</button>
+            </form>
+            {% endcomment %}
+
+        </div>
+    </nav>

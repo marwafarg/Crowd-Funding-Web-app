@@ -1,0 +1,40 @@
+
+{%  extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+
+{% block content %}
+
+
+            <h1 style="margin:auto;">Login here</h1>
+<h2 style="margin:auto;">please login to active your email..!</h2>
+
+            <form method="POST" action="" >
+                {% csrf_token %}
+               <label>Username</label>
+                    <input type="text"   placeholder="username.." name="username">
+
+                    <label >Password</label>
+                    <input type="password" placeholder="Password" name="password">
+
+                <input class="btn btn-primary" type="submit" value="Login">
+            </form>
+            <a href="{% url 'signup' %}"> Don't have an account ? , Sign up here</a>
+        </div>
+
+      <div class="col-md-8 col-xs-12">
+          <img class="img-fluid" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+
+      </div>
+
+  </div>
+
+    </div>
+
+
+{% endblock content %}

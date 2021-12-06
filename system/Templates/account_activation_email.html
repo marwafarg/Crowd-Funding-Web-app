@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row" style="margin-top:4%;">
+
+    <div class="col-md-3" style="margin-left:10%; text-align: center;">
+        <div class="card card-body" style="border-radius:25px;">
+<h2>Congratulations  ,<a href="#">{{request.user.username}}</a> your email is active now ..!</h2>
+<h3 >{{request.user.first_name}} {{request.user.last_name}}</h3>
+            <a href="#"><h4 >@{{request.user.username}}</h4></a>
+            <h4 >{{request.user.email}}</h4>
+    <a href="{% url 'profile' %}"> <h5>Click To View Your Profile</h5> </a>
+        </div>
+    </div>
+
+</body>
+</html>

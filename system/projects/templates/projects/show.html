@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+     {%for l in object_list%}
+                <div class="card" style="margin: 3%;">
+                    <div class="card-body">
+                        <h1>{{l.title}}</h1>
+                        <h5>{{l.details}}</h5>
+                        <img src="{{l.image.url}}">
+                          {% endfor %}
+</div>
+
+</body>
+</html>
